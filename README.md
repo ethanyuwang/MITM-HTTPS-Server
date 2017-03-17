@@ -1,0 +1,2 @@
+# MITM-HTTPS-Server
+The goal of this assignment will be to create an HTTP(S) proxy server to monitor traffic coming from your mobile device. From this, you will be able to see the requests that different applications make and observe the data that is being sent over the network. In addition, you will be able to observe how different apps use and design their different APIs to properly perform their functions. As an extension, you will modify the responses for a specific application to simulate a malicious attack that can be performed through such means.
