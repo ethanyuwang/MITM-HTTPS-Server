@@ -137,12 +137,20 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
         u = urlparse.urlsplit(req.path)
         scheme, netloc, path = u.scheme, u.netloc, (u.path + '?' + u.query if u.query else u.path)
+        print "url.query: "+ u.query
+        print "url.path: "+ u.path
+        print "path: "+ path
         assert scheme in ('http', 'https')
         if netloc:
             req.headers['Host'] = netloc
         setattr(req, 'headers', self.filter_headers(req.headers))
 
         try:
+            #print "url.scheme" + url.scheme
+            #print "url.netloc" + url.netloc
+            print "scheme" + scheme
+            print "netloc" + netloc
+
             origin = (scheme, netloc)
             if not origin in self.tls.conns:
                 if scheme == 'https':
